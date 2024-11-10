@@ -39,7 +39,7 @@
     
     
     
-}
+
 
     function ToggleSwitches() {
         document.getElementsByClassName("onOffSwitches")[0].classList.toggle("ActiveSwitchStatus");
@@ -157,7 +157,7 @@ window.onload = function() {
     }, 10);
     
 
-
+}
 
 
 
