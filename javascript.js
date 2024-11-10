@@ -37,15 +37,15 @@
         
     }
     
+    
+    
+}
+
     function ToggleSwitches() {
         document.getElementsByClassName("onOffSwitches")[0].classList.toggle("ActiveSwitchStatus");
         document.getElementsByClassName("onOffSwitches")[1].classList.toggle("ActiveSwitchStatus");
     }
     document.getElementById("hh").addEventListener('click', ToggleSwitches);
-    
-    
-}
-
 
 
 
