@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+* { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Roboto Flex", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    padding-left: 70px;
+    background: #fff;
+    overflow: hidden;
+}
+.Header {
+    height: 100vh;
+    width: 70px;
+    border-bottom-right-radius: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px #adadad;
+    z-index: 1;
+}
+
+.Nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.OnOffWraper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 0;
+}
+.onOffSwitches {
+    align-self: center;
+    width: 10px;
+    height: 10px;
+    opacity: .3;
+    border-radius: 50%;
+    transition: all ease .5s;
+}
+.offSwitch {
+    background: #DC143C;
+    box-shadow: 0px 0px 4px #8B0000;
+}
+.onSwitch {
+    background: #32CD32;
+    opacity: .3;
+    box-shadow: 0px 0px 5px #00FF00;
+}
+.ActiveSwitchStatus {
+    opacity: 1;
+}
+.Controls-Wraper {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.Buttonwraper {
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+}
+.control-button {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all ease .4s;
+}
+.control-button:hover {
+    filter: brightness(95%);
+}
+.currentOpenPage {
+    filter: brightness(93%);
+}
+.navHelp {
+    min-width: 150px;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 13px;
+    background: white;
+    box-shadow: 0px 0px 7px #adabab;
+    position: absolute;
+    left: -200px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: all ease .4s;
+    pointer-events: none;
+    opacity: 0;
+    z-index: -1;
+}
+.navHelpShow {
+    left: 100% !important;
+    opacity: 1;
+}
+.control-button-Icon {
+    width: 33px;
+    height: 33px;
+    fill: #0f1938;
+    
+}
+
+
+
+
+
+
+
+.semiPagersWraper {
+    transform: translateY(0%);
+    transition: all ease-in-out 1s;
+}
+.semiPage {
+    height: 100vh;
+    padding: 35px;
+    overflow-y: scroll;
+    border: #1f292c 0px solid;
+}
+.semiPageTitle {
+    font-size: 32px;            /* Bigger font size for titles */
+    font-weight: bold;          /* Make the text bold */
+    color: #2c3e50;             /* Dark color for text */
+    margin: 0;                  /* Remove default margin */
+    padding-bottom: 10px;       /* Add some space below the title */
+    text-transform: uppercase;  /* Make text uppercase */
+    letter-spacing: 1px;  
+}
+
+
+
+
+.HistoryofExperWraper {
+    padding-top: 50px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.experimentWraper {
+    min-width: 250px;
+    min-height: 150px;
+    padding: 15px 15px;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #e2e2e2;
+}
+
+.experimentWraper .contentText {
+    font-size: 16px;
+    font-weight: 500;            
+    color: #34495e;            
+    margin: 0;                  
+    font-family: 'Arial', sans-serif; 
+}
+
+
+#Range {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 180px;
+    height: 40px;
+    transition: all ease-in-out .3s;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px inset #adadad; 
+    
+}
+#Range::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 80px; 
+    height: 40px; 
+    background: #fff;
+    border-radius: 30px;
+    
+    background: url(./Icons/wind-svgrepo-com.svg);
+    background-position: center center;
+    background-size: contain;
+    box-shadow: 0px 0px 6px inset #adadad;
+    cursor: pointer; 
+    position: relative;
+    transition: all ease-in-out .3s;
+    left: 0;
+}
+#Range::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.openingShowWraper {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    backdrop-filter: blur(3px);
+    z-index: 3;
+    transition: all ease-in-out .2s;
+    pointer-events: none;
+}
+.Hide {
+    opacity: 0;
+}
+.WindShow {
+    position: absolute;
+    height: 40px;
+    animation: ani 3s 1s;
+    opacity: 0;
+}
+
+@keyframes ani {
+    from {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+    20% {
+        opacity: 1;
+    }
+    to {
+        transform: translateX(250px);
+        opacity: 0;
+    }
+    
+}
