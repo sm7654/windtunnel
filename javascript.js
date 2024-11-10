@@ -55,11 +55,13 @@ document.getElementById("Range").addEventListener('mouseup', sliderCheck);
 
 let interval;
 function sliderCheck() {
-    
+    try {
+        clearInterval(interval);
+    } catch (error) {}
     console.log("mouse up!");
     let x = document.getElementById("Range").value;
     let counter = 0;
-    if (x < 99) {
+    if (x < 95) {
 
         interval = setInterval(() => {
             counter++;
