@@ -1,4 +1,50 @@
-
+    // Temp stuff
+    
+    class Experiment {
+        #name = "";
+        #date = "";
+        constructor(name) {
+            this.#name = name;
+            
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = String(currentDate.getMonth() + 1);
+            const day = String(currentDate.getDate());
+            
+            this.#date = `${year}-${month}-${day}`;
+            
+        }
+    
+        GetName() {
+            return this.#name;
+        }
+        GetDate() {
+            return this.#date
+        }
+    }
+    
+    for (let i = 0; i < 10; i++) {
+        const Exper = new Experiment("Spoiler");
+        const ExperHTML = 
+        `
+        <aside class="experimentWraper">
+            <p class="contentText">${Exper.GetName()}</p>
+            <p>_</p>
+            <p class="contentText">${Exper.GetDate()}</p>
+        </aside>
+        `;
+        document.getElementsByClassName("HistoryofExperWraper")[0].insertAdjacentHTML("beforeend", ExperHTML);
+        
+    }
+    
+    function ToggleSwitches() {
+        document.getElementsByClassName("onOffSwitches")[0].classList.toggle("ActiveSwitchStatus");
+        document.getElementsByClassName("onOffSwitches")[1].classList.toggle("ActiveSwitchStatus");
+    }
+    document.getElementById("hh").addEventListener('click', ToggleSwitches);
+    
+    
+}
 
 
 
@@ -119,50 +165,4 @@ window.onload = function() {
 
 
 
-    // Temp stuff
-    
-    class Experiment {
-        #name = "";
-        #date = "";
-        constructor(name) {
-            this.#name = name;
-            
-            const currentDate = new Date();
-            const year = currentDate.getFullYear();
-            const month = String(currentDate.getMonth() + 1);
-            const day = String(currentDate.getDate());
-            
-            this.#date = `${year}-${month}-${day}`;
-            
-        }
-    
-        GetName() {
-            return this.#name;
-        }
-        GetDate() {
-            return this.#date
-        }
-    }
-    
-    for (let i = 0; i < 10; i++) {
-        const Exper = new Experiment("Spoiler");
-        const ExperHTML = 
-        `
-        <aside class="experimentWraper">
-            <p class="contentText">${Exper.GetName()}</p>
-            <p>_</p>
-            <p class="contentText">${Exper.GetDate()}</p>
-        </aside>
-        `;
-        document.getElementsByClassName("HistoryofExperWraper")[0].insertAdjacentHTML("beforeend", ExperHTML);
-        
-    }
-    
-    function ToggleSwitches() {
-        document.getElementsByClassName("onOffSwitches")[0].classList.toggle("ActiveSwitchStatus");
-        document.getElementsByClassName("onOffSwitches")[1].classList.toggle("ActiveSwitchStatus");
-    }
-    document.getElementById("hh").addEventListener('click', ToggleSwitches);
-    
-    
-}
+
