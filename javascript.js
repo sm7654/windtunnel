@@ -79,7 +79,7 @@ window.onload = function() {
             }, 2000);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].remove();
-            }, 5000);
+            }, 3000);
         }
     }, 30);
     
