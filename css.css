@@ -161,6 +161,41 @@ body {
 
 
 /*Controller page*/
+.windController_Wraper {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+.windInputWraper {
+    padding: 6px 10px;
+    border-radius: 7px;
+    top: 50%;
+    position: relative;
+}
+#windController {
+    writing-mode: vertical-rl;
+    direction: rtl;
+    width: 15px;
+    background-color: #ededed;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    appearance: none !important;
+}
+#windController::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    width: 40px;
+    height: 13px; 
+    background: #1f292c; 
+    cursor: pointer; 
+  }
+  
+#windController::-moz-range-thumb {
+    width: 40px;
+    height: 15px; 
+    background: #1f292c; 
+    cursor: pointer; 
+}
+
 
 #ActiveTunnelButton {
     border: none;
@@ -170,7 +205,6 @@ body {
     cursor: pointer;
     color: #277e96; 
 }
-
 
 
 /* History Page */

@@ -139,3 +139,13 @@ function ToggleSwitches() {
     document.getElementsByClassName("onOffSwitches")[1].classList.toggle("ActiveSwitchStatus");
 }
 document.getElementById("ActiveTunnelButton").addEventListener('click', ToggleSwitches);
+
+
+
+
+
+
+document.getElementById("windController").addEventListener('input', function(e) {
+    document.getElementById("windController_VALUE").textContent = document.getElementById("windController").value;
+    console.log();
+});
