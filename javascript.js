@@ -136,8 +136,8 @@ function sliderCheck() {
 window.onload = function() {
     let counter = 0;
     const interval = setInterval(function() {
-        counter++;
-        let xIndex = Math.floor(Math.random() * (window.innerWidth  + 1));;
+        counter = counter + 2;
+        let xIndex = Math.floor(Math.random() * (window.innerWidth  + 1));
         let yIndex = Math.floor(Math.random() * (window.innerHeight + 1));
         
         let wind = `        
@@ -152,7 +152,7 @@ window.onload = function() {
             },1000);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].remove();
-            }, 5000);
+            }, 4000);
         }
     }, 10);
     
