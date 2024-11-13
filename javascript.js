@@ -149,7 +149,7 @@ window.onload = function() {
             clearInterval(interval);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].classList.add("Hide");
-            },3000);
+            },1000);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].remove();
             }, 5000);
