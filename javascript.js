@@ -145,7 +145,7 @@ window.onload = function() {
         `;
         document.getElementsByClassName("openingShowWraper")[0].insertAdjacentHTML('beforeend', wind);
         
-        if (counter > 500) {
+        if (counter > 300) {
             clearInterval(interval);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].classList.add("Hide");
