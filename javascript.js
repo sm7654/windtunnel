@@ -1,51 +1,5 @@
-    // Temp stuff
-    
-    class Experiment {
-        #name = "";
-        #date = "";
-        constructor(name) {
-            this.#name = name;
-            
-            const currentDate = new Date();
-            const year = currentDate.getFullYear();
-            const month = String(currentDate.getMonth() + 1);
-            const day = String(currentDate.getDate());
-            
-            this.#date = `${year}-${month}-${day}`;
-            
-        }
-    
-        GetName() {
-            return this.#name;
-        }
-        GetDate() {
-            return this.#date
-        }
-    }
-    
-    for (let i = 0; i < 10; i++) {
-        const Exper = new Experiment("Spoiler");
-        const ExperHTML = 
-        `
-        <aside class="experimentWraper">
-            <p class="contentText">${Exper.GetName()}</p>
-            <p>_</p>
-            <p class="contentText">${Exper.GetDate()}</p>
-        </aside>
-        `;
-        document.getElementsByClassName("HistoryofExperWraper")[0].insertAdjacentHTML("beforeend", ExperHTML);
-        
-    }
-    
-    
-    
 
 
-    function ToggleSwitches() {
-        document.getElementsByClassName("onOffSwitches")[0].classList.toggle("ActiveSwitchStatus");
-        document.getElementsByClassName("onOffSwitches")[1].classList.toggle("ActiveSwitchStatus");
-    }
-    document.getElementById("hh").addEventListener('click', ToggleSwitches);
 
 
 
@@ -94,39 +48,6 @@ for (let i =0; i< ControlButtons.length; i++) {
 
 
 
-// Slider Switch
-document.getElementById("Range").value = 0;
-document.getElementById("Range").addEventListener('touchend', sliderCheck);
-document.getElementById("Range").addEventListener('mouseup', sliderCheck);
-
-let interval;
-function sliderCheck() {
-    try {
-        clearInterval(interval);
-    } catch (error) {}
-    console.log("mouse up!");
-    let x = document.getElementById("Range").value;
-    let counter = 0;
-    if (x < 95) {
-
-        interval = setInterval(() => {
-            counter++;
-            x -= 1;
-            document.getElementById("Range").value = x;
-            
-            if (x < 1) {
-                clearInterval(interval);
-            }
-
-        }, 1);
-    
-    } else {
-        ToggleSwitches();
-    }
-    
-}
-
-
 
 
 
@@ -136,8 +57,8 @@ function sliderCheck() {
 window.onload = function() {
     let counter = 0;
     const interval = setInterval(function() {
-        counter = counter + 2;
-        let xIndex = Math.floor(Math.random() * (window.innerWidth  + 1));
+        counter = counter + 400;
+        let xIndex = Math.floor(Math.random() * (window.innerWidth  + 1));;
         let yIndex = Math.floor(Math.random() * (window.innerHeight + 1));
         
         let wind = `        
@@ -145,24 +66,70 @@ window.onload = function() {
         `;
         document.getElementsByClassName("openingShowWraper")[0].insertAdjacentHTML('beforeend', wind);
         
-        if (counter > 300) {
+        if (counter > 400) {
             clearInterval(interval);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].classList.add("Hide");
-            },1000);
+            }, 1);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].remove();
-            }, 4000);
+            }, 1);
         }
-    }, 10);
+    }, 30);
     
 
+
+
+
+
+
+
+
+
+    // Temp stuff
+    
+    class Experiment {
+        #name = "";
+        #date = "";
+        constructor(name) {
+            this.#name = name;
+            
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = String(currentDate.getMonth() + 1);
+            const day = String(currentDate.getDate());
+            
+            this.#date = `${year}-${month}-${day}`;
+            
+        }
+    
+        GetName() {
+            return this.#name;
+        }
+        GetDate() {
+            return this.#date
+        }
+    }
+    
+    for (let i = 0; i < 10; i++) {
+        const Exper = new Experiment("Spoiler");
+        const ExperHTML = 
+        `
+        <aside class="experimentWraper">
+            <p class="contentText">${Exper.GetName()}</p>
+            <p>_</p>
+            <p class="contentText">${Exper.GetDate()}</p>
+        </aside>
+        `;
+        document.getElementsByClassName("HistoryofExperWraper")[0].insertAdjacentHTML("beforeend", ExperHTML);
+        
+    }
+    
+    
+    
 }
-
-
-
-
-
-
-
-
+function ToggleSwitches() {
+    document.getElementsByClassName("onOffSwitches")[0].classList.toggle("ActiveSwitchStatus");
+    document.getElementsByClassName("onOffSwitches")[1].classList.toggle("ActiveSwitchStatus");
+}
+document.getElementById("ActiveTunnelButton").addEventListener('click', ToggleSwitches);

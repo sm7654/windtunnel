@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
-
+:root {
+    --Icons_buttonColor: #0f1938;
+    
+}
 * { 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0%;
@@ -125,7 +128,7 @@ body {
 .control-button-Icon {
     width: 33px;
     height: 33px;
-    fill: #0f1938;
+    fill: var(--Icons_buttonColor);
     
 }
 
@@ -144,6 +147,7 @@ body {
     padding: 35px;
     overflow-y: scroll;
     border: #1f292c 0px solid;
+    position: relative;
 }
 .semiPageTitle {
     font-size: 32px;            /* Bigger font size for titles */
@@ -156,8 +160,20 @@ body {
 }
 
 
+/*Controller page*/
+
+#ActiveTunnelButton {
+    border: none;
+    background: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    color: #277e96; 
+}
 
 
+
+/* History Page */
 .HistoryofExperWraper {
     padding-top: 50px;
     width: 100%;
@@ -184,47 +200,6 @@ body {
     color: #34495e;            
     margin: 0;                  
     font-family: 'Arial', sans-serif; 
-}
-
-
-#Range {
-    -webkit-appearance: none;
-    appearance: none;
-    border-radius: 30px;
-    cursor: pointer;
-    width: 180px;
-    height: 40px;
-    transition: all ease-in-out .3s;
-    background-color: #fff;
-    box-shadow: 0px 0px 5px inset #adadad; 
-    
-}
-#Range::-webkit-slider-thumb {
-    -webkit-appearance: none; 
-    appearance: none; 
-    width: 80px; 
-    height: 40px; 
-    background: #fff;
-    border-radius: 30px;
-    
-    background: url(./Icons/wind-svgrepo-com.svg);
-    background-position: center center;
-    background-size: contain;
-    box-shadow: 0px 0px 6px inset #adadad;
-    cursor: pointer; 
-    position: relative;
-    transition: all ease-in-out .3s;
-    left: 0;
-}
-#Range::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(1px);
-    pointer-events: none;
 }
 
 
