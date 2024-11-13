@@ -7,40 +7,46 @@
 
 //Button Controller
 const Buttonwraper = document.getElementsByClassName("Buttonwraper");
+const ButtonwraperArray = Array.from(Buttonwraper);
 const ControlButtons = document.getElementsByClassName("control-button");
-function Activate(i) {
-    document.getElementsByClassName("navHelp")[i].classList.add('navHelpShow');
-
+function Activate(index) {
+    document.getElementsByClassName("navHelp")[index].classList.add('navHelpShow');
 }
-for (let i = 0; i < Buttonwraper.length; i++) {
+ButtonwraperArray.forEach(button => {
+
+    let Button_index = ButtonwraperArray.indexOf(button);
     let HoverTimeout;
-    Buttonwraper[i].addEventListener('mouseover', function(event) {
+    button.addEventListener('mouseover', function(event) {
         clearTimeout(HoverTimeout);
-
+    
         HoverTimeout = setTimeout(() => {
-            Activate(i);
-
+            Activate(Button_index);
         }, 1000);
     });
-
-
-    Buttonwraper[i].addEventListener('mouseout', function(event) {
-        document.getElementsByClassName("navHelp")[i].classList.remove('navHelpShow');
-        clearTimeout(HoverTimeout)
+    
+    
+    button.addEventListener('mouseout', function(event) {
+        document.getElementsByClassName("navHelp")[Button_index].classList.remove('navHelpShow');
+        clearTimeout(HoverTimeout);
     });
-}
+    
 
+});
+
+let currentOpenPage = ControlButtons[0];
 for (let i =0; i< ControlButtons.length; i++) {
     ControlButtons[i].addEventListener('click', function(event) {
-        for (let j = 0; j  < ControlButtons.length; j++) {
-            if (j != i) {
-                ControlButtons[j].classList.remove("currentOpenPage");
-            } else {
-                ControlButtons[j].classList.add("currentOpenPage");
-                
-                document.getElementsByClassName("semiPagersWraper")[0].style.transform = `translateY(${-25*j}%)`;
-            }
-        }
+        
+        currentOpenPage.classList.remove("currentOpenPage");
+        let index = ButtonwraperArray.indexOf(currentOpenPage);
+
+        currentOpenPage = ControlButtons[i];
+        currentOpenPage.classList.add("currentOpenPage");
+        document.getElementsByClassName("semiPagersWraper")[0].style.transform = `translateY(${-25*i}%)`;
+        setTimeout(() => {
+            document.getElementsByClassName("navHelp")[i].classList.remove('navHelpShow');
+        }, 1000);
+        
     });
 }
 
@@ -57,7 +63,7 @@ for (let i =0; i< ControlButtons.length; i++) {
 window.onload = function() {
     let counter = 0;
     const interval = setInterval(function() {
-        counter = counter + 400;
+        counter = counter + 2;
         let xIndex = Math.floor(Math.random() * (window.innerWidth  + 1));;
         let yIndex = Math.floor(Math.random() * (window.innerHeight + 1));
         
@@ -70,10 +76,10 @@ window.onload = function() {
             clearInterval(interval);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].classList.add("Hide");
-            }, 1);
+            }, 2000);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].remove();
-            }, 1);
+            }, 5000);
         }
     }, 30);
     
