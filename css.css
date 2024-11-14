@@ -161,23 +161,20 @@ body {
 
 
 /*Controller page*/
-.windController_Wraper {
-    width: 100%;
-}
 .windInputWraper {
+    width: 100%;
     padding: 6px 10px;
     border-radius: 7px;
     top: 50%;
     position: relative;
     box-shadow: 0px 0px 10px #1f292c;
-    height: 200px;
 }
 #windController {
     -webkit-appearance: none !important;
     appearance: none !important;
     writing-mode: vertical-rl;
     direction: rtl;
-    width: 15px;
+    width: 150px;
     background-color: #ededed;
     border-radius: 5px;
     -webkit-appearance: none;
