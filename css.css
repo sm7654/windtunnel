@@ -171,6 +171,7 @@ body {
     border-radius: 7px;
     top: 50%;
     position: relative;
+    box-shadow: 0px 0px 10px #1f292c;
 }
 #windController {
     writing-mode: vertical-rl;
