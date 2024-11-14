@@ -173,7 +173,7 @@ body {
     appearance: none !important;
     writing-mode: vertical-rl;
     direction: rtl;
-    width: 15px;
+    width: 150px;
     background-color: #ededed;
     border-radius: 5px;
     -webkit-appearance: none;
@@ -181,7 +181,7 @@ body {
 #windController::-webkit-slider-thumb {
     -webkit-appearance: none !important;
     width: 40px;
-    height: 13px; 
+    height: 13px;
     background: #1f292c; 
     cursor: pointer; 
   }
