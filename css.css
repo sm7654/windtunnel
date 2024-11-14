@@ -175,13 +175,14 @@ body {
     height: 200px;
 }
 #windController {
+    -webkit-appearance: none !important;
+    appearance: none !important;
     writing-mode: vertical-rl;
     direction: rtl;
     width: 15px;
     background-color: #ededed;
     border-radius: 5px;
     -webkit-appearance: none;
-    appearance: none !important;
 }
 #windController::-webkit-slider-thumb {
     -webkit-appearance: none !important;
