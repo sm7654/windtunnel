@@ -172,12 +172,12 @@ body {
     top: 50%;
     position: relative;
     box-shadow: 0px 0px 10px #1f292c;
+    height: 200px;
 }
 #windController {
     writing-mode: vertical-rl;
     direction: rtl;
     width: 15px;
-    height: 150px;
     background-color: #ededed;
     border-radius: 5px;
     -webkit-appearance: none;
