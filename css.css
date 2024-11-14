@@ -177,6 +177,7 @@ body {
     writing-mode: vertical-rl;
     direction: rtl;
     width: 15px;
+    height: 150px;
     background-color: #ededed;
     border-radius: 5px;
     -webkit-appearance: none;
