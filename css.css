@@ -169,10 +169,7 @@ body {
     position: relative;
 }
 #windController {
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    writing-mode: vertical-rl;
-    direction: rtl;
+
     width: 20px;
     background-color: #d81d1d;
     border-radius: 5px;
