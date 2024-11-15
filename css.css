@@ -163,9 +163,10 @@ body {
 /*Controller page*/
 .windStatsView {
     display: flex;
+    align-items: center;
 }
 .windInputWraper {
-    padding: 6px 10px;
+    padding: 0px 15px;
     border-radius: 7px;
     position: relative;
 }
@@ -174,17 +175,17 @@ body {
     appearance: none !important;
     writing-mode: vertical-rl;
     width: 20px;
-    height: 173px;
-    border-radius: 2px;
+    height: 200px;
+    border-radius: 5px;
     background: linear-gradient(45deg, lightgreen, orange, red);
 }
 #windController::-webkit-slider-thumb {
     -webkit-appearance: none !important;
-    width: 40px;
-    height: 13px;
+    width: 45px;
+    height: 20px;
     background: transparent;
-    backdrop-filter: blur(5px); 
-    border: 1px solid #ededed;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 7px #adadad;
     cursor: pointer; 
   }
   
@@ -194,10 +195,35 @@ body {
     background: #1f292c; 
     cursor: pointer; 
 }
-.TESTdiv {
-    width: 20px;
-    height: 50px;
-    background-color: #0f1938;
+.WindFlowScreen {
+    position: relative;
+    width: 60%;
+    height: 250px;
+    background: linear-gradient(90deg,transparent, #ededed);
+    overflow: hidden;
+}
+.windFlowIndevidual {
+    position: absolute;
+    width: 17px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #464646);
+    border-radius: 30px;
+    animation: windFlow linear infinite;
+    animation-duration: 5s;
+    transition: all .3s ease-in-out;
+}
+
+@keyframes windFlow {
+    from {
+        left: 0%;
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    to {
+        left: 100%;
+    }
 }
 #ActiveTunnelButton {
     border: none;

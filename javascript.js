@@ -1,4 +1,6 @@
-
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
 
 
 
@@ -63,9 +65,9 @@ for (let i =0; i< ControlButtons.length; i++) {
 window.onload = function() {
     let counter = 0;
     const interval = setInterval(function() {
-        counter = counter + 2;
-        let xIndex = Math.floor(Math.random() * (window.innerWidth  + 1));;
-        let yIndex = Math.floor(Math.random() * (window.innerHeight + 1));
+        counter = counter + 400;
+        let xIndex = getRandomInt(0 ,window.innerWidth);
+        let yIndex = getRandomInt(0 ,window.innerHeight);
         
         let wind = `        
             <svg class="WindShow" style="top: ${yIndex}px; left: ${xIndex - 70}px;" fill="#000000" viewBox="0 0 24 24" id="wind" xmlns="http://www.w3.org/2000/svg" class="icon multi-color"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title style="stroke-width: 2;">wind</title><path id="secondary-stroke" d="M10,3a2,2,0,0,1,0,4m0,0H3M3,19h7" style="fill: none; stroke: #2ca9bc; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary-stroke" d="M17.5,11a3.5,3.5,0,0,0,0-7m0,7H3m13,4H3m13,6a3,3,0,0,0,0-6" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg>
@@ -76,6 +78,7 @@ window.onload = function() {
             clearInterval(interval);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].classList.add("Hide");
+                activeWindFlow();
             }, 2000);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].remove();
@@ -86,8 +89,59 @@ window.onload = function() {
 
 
 
+//wind flow controller
+let WindFlowScreen = document.getElementsByClassName("WindFlowScreen")[0];
+let loop;
+function activeWindFlow(initial_speed) {
+    loop = setInterval(() => {
+        let wind = 
+        `
+            <div class="windFlowIndevidual"></div>
+        `;
+        let screenPsition = WindFlowScreen.getBoundingClientRect();
+        let yIndex = getRandomInt( 
+            0,
+            WindFlowScreen.clientHeight
+        );
+    
+        let windCounter = WindFlowScreen.childElementCount;
+        let NewWindIndex = windCounter;
 
+        WindFlowScreen.insertAdjacentHTML('beforeend', wind);
+        let currentWind = document.getElementsByClassName("windFlowIndevidual")[NewWindIndex];
+        currentWind.style.animationDuration = `${initial_speed}s`;
+        currentWind.style.top = `${yIndex}px`
 
+        setTimeout(() => {
+            currentWind.style.opacity = "0";
+        }, (initial_speed)*1000);
+
+        let RamoveTimeout = setTimeout(() => {
+            currentWind.style.opacity = "0";
+            currentWind.remove();
+        }, initial_speed*1000);
+    }, 5*initial_speed);
+
+}
+function updateWindFlow(UpdaatedWindFlow) {
+    let windFlowSpeed = (100 - (UpdaatedWindFlow - 30))/25;
+    console.log(windFlowSpeed)  ;
+    clearInterval(loop);
+    activeWindFlow(windFlowSpeed);
+}
+document.getElementById("windController").addEventListener('input', function(e) {
+    document.getElementById("windController_VALUE").textContent = document.getElementById("windController").value;
+    updateWindFlow(document.getElementById("windController").value);
+
+});
+document.getElementById("Pause").addEventListener('click', function(event) {
+    clearInterval(loop);
+    let winds = document.querySelectorAll(".windFlowIndevidual");
+
+    winds.forEach(wind => {
+        wind.style.animationPlayState = 'paused';
+    })
+});
 
 
 
@@ -145,7 +199,5 @@ document.getElementById("ActiveTunnelButton").addEventListener('click', ToggleSw
 
 
 
-document.getElementById("windController").addEventListener('input', function(e) {
-    document.getElementById("windController_VALUE").textContent = document.getElementById("windController").value;
-    console.log();
-});
+
+
