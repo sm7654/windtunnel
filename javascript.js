@@ -78,7 +78,7 @@ window.onload = function() {
             clearInterval(interval);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].classList.add("Hide");
-                activeWindFlow();
+                activeWindFlow(3);
             }, 2000);
             setTimeout(()=> {
                 document.getElementsByClassName("openingShowWraper")[0].remove();
@@ -90,6 +90,37 @@ window.onload = function() {
 
 
 //wind flow controller
+
+function addEventListenerToNewWind(wind) {
+    wind.addEventListener('animationstart', function(event) {
+        let gg = setInterval(() => {
+            let box = document.getElementsByClassName("box")[0].getBoundingClientRect();
+            let windBounding = wind.getBoundingClientRect();
+            
+            if 
+            (
+                windBounding.x  > box.left && 
+                windBounding.y > box.top  && 
+                windBounding.y < box.bottom 
+            ) {
+
+                clearInterval(gg);
+                wind.remove();
+                return;
+            }
+        }, 100);
+
+        setTimeout(() => {
+            clearInterval(gg);
+            return;
+        }, 2000)
+
+
+    });
+
+}
+
+
 let WindFlowScreen = document.getElementsByClassName("WindFlowScreen")[0];
 let loop;
 function activeWindFlow(initial_speed) {
@@ -104,19 +135,20 @@ function activeWindFlow(initial_speed) {
             WindFlowScreen.clientHeight
         );
     
-        let windCounter = WindFlowScreen.childElementCount;
+        let windCounter = WindFlowScreen.childElementCount - 2;
         let NewWindIndex = windCounter;
 
         WindFlowScreen.insertAdjacentHTML('beforeend', wind);
         let currentWind = document.getElementsByClassName("windFlowIndevidual")[NewWindIndex];
+        addEventListenerToNewWind(currentWind);
         currentWind.style.animationDuration = `${initial_speed}s`;
         currentWind.style.top = `${yIndex}px`
-
+        
         setTimeout(() => {
             currentWind.style.opacity = "0";
         }, (initial_speed)*1000);
 
-        let RamoveTimeout = setTimeout(() => {
+        setTimeout(() => {
             currentWind.style.opacity = "0";
             currentWind.remove();
         }, initial_speed*1000);
@@ -125,12 +157,12 @@ function activeWindFlow(initial_speed) {
 }
 function updateWindFlow(UpdaatedWindFlow) {
     let windFlowSpeed = (100 - (UpdaatedWindFlow - 30))/25;
-    console.log(windFlowSpeed)  ;
+    console.log(windFlowSpeed);
     clearInterval(loop);
     activeWindFlow(windFlowSpeed);
 }
 document.getElementById("windController").addEventListener('input', function(e) {
-    document.getElementById("windController_VALUE").textContent = document.getElementById("windController").value;
+    document.getElementById("windController_VALUE").textContent = document.getElementById("windController").value + " ";
     updateWindFlow(document.getElementById("windController").value);
 
 });

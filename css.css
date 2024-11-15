@@ -174,10 +174,11 @@ body {
     -webkit-appearance: none !important;
     appearance: none !important;
     writing-mode: vertical-rl;
+    direction: rtl;
     width: 20px;
     height: 200px;
     border-radius: 5px;
-    background: linear-gradient(45deg, lightgreen, orange, red);
+    background: linear-gradient(0deg, lightgreen, orange, red);
 }
 #windController::-webkit-slider-thumb {
     -webkit-appearance: none !important;
@@ -199,8 +200,20 @@ body {
     position: relative;
     width: 60%;
     height: 250px;
-    background: linear-gradient(90deg,transparent, #ededed);
+    background: linear-gradient(90deg, transparent, #ededed);
     overflow: hidden;
+    display: grid;
+}
+.stats {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    padding: 3px 4px;
+    color: #1f292c;
+    z-index: 2;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
 }
 .windFlowIndevidual {
     position: absolute;
@@ -212,7 +225,21 @@ body {
     animation-duration: 5s;
     transition: all .3s ease-in-out;
 }
-
+.box {
+    width: 150px;
+    height: 10px;
+    position: relative;
+    background-color: #0f1938;
+    z-index: 2;
+    transform: rotate(-20deg);
+    place-self: center;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 30%;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    
+}
 @keyframes windFlow {
     from {
         left: 0%;
