@@ -184,6 +184,7 @@ body {
     height: 13px;
     background: transparent;
     backdrop-filter: blur(5px); 
+    border: 1px solid #ededed;
     cursor: pointer; 
   }
   
