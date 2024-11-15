@@ -172,6 +172,7 @@ body {
     appearance: none !important;
     writing-mode: vertical-rl;
     width: 200px;
+    height: 20px;
     background-color: #d81d1d;
     border-radius: 5px;
 }
