@@ -165,15 +165,15 @@ body {
     width: 100%;
     padding: 6px 10px;
     border-radius: 7px;
-    top: 50%;
     position: relative;
 }
 #windController {
-
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    writing-mode: vertical-rl;
     width: 20px;
     background-color: #d81d1d;
     border-radius: 5px;
-    -webkit-appearance: none;
 }
 #windController::-webkit-slider-thumb {
     -webkit-appearance: none !important;
