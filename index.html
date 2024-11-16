@@ -58,13 +58,41 @@
         
             <section>
 
+                <h1></h1>
+            
                 <aside class="windStatsView">
                     <div class="windInputWraper">
-                        <input type="range" id="windController" min="30" max="90" orient="vertical"/>
+                        <input type="range" id="windController" class="verticalInput" min="30" max="90" orient="vertical"/>
+                        
+                        <div class="measurements">
+                            <p>90</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>60</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>30</p>
+                        </div>
                     </div>
                     <div class="WindFlowScreen">
                         <div class="box"></div>
-                        <p class="stats">wind speed: <label id="windController_VALUE">60</label></p>
+                        <p class="stats">wind speed: <label class="StatsLabel" id="windController_VALUE">60</label> angle: <label class="StatsLabel" id="angleController_VALUE">30</label></p>
+                    </div>
+                    <div class="windInputWraper">
+                        <div class="measurements angleMeasure">
+                            <p>60</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>30</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>0</p>
+                        </div>
+                        <input type="range" id="AngleController" class="verticalInput" min="0" max="60" orient="vertical"/>
                     </div>
                     <button id="Pause">CLEAR</button>
                 </aside>

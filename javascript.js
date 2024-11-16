@@ -65,7 +65,7 @@ for (let i =0; i< ControlButtons.length; i++) {
 window.onload = function() {
     let counter = 0;
     const interval = setInterval(function() {
-        counter = counter + 2;
+        counter = counter + 600;
         let xIndex = getRandomInt(0 ,window.innerWidth);
         let yIndex = getRandomInt(0 ,window.innerHeight);
         
@@ -142,7 +142,7 @@ function activeWindFlow(initial_speed) {
         let currentWind = document.getElementsByClassName("windFlowIndevidual")[NewWindIndex];
         addEventListenerToNewWind(currentWind);
         currentWind.style.animationDuration = `${initial_speed}s`;
-        currentWind.style.top = `${yIndex}px`
+        currentWind.style.top = `${yIndex}px`;
         
         setTimeout(() => {
             currentWind.style.opacity = "0";
@@ -157,12 +157,11 @@ function activeWindFlow(initial_speed) {
 }
 function updateWindFlow(UpdaatedWindFlow) {
     let windFlowSpeed = (100 - (UpdaatedWindFlow - 30))/25;
-    console.log(windFlowSpeed);
     clearInterval(loop);
     activeWindFlow(windFlowSpeed);
 }
 document.getElementById("windController").addEventListener('input', function(e) {
-    document.getElementById("windController_VALUE").textContent = document.getElementById("windController").value + " ";
+    document.getElementById("windController_VALUE").textContent = document.getElementById("windController").value;
     updateWindFlow(document.getElementById("windController").value);
 
 });
@@ -175,7 +174,11 @@ document.getElementById("Pause").addEventListener('click', function(event) {
     })
 });
 
-
+document.getElementById("AngleController").addEventListener('input', (event) => {
+    let angle = document.getElementById("AngleController").value;
+    document.getElementById("angleController_VALUE").textContent = angle;
+    document.getElementsByClassName("box")[0].style.transform = `rotate(${angle*-1}deg)`
+});
 
 
     // Temp stuff
