@@ -65,7 +65,7 @@ for (let i =0; i< ControlButtons.length; i++) {
 window.onload = function() {
     let counter = 0;
     const interval = setInterval(function() {
-        counter = counter + 600;
+        counter = counter + 2;
         let xIndex = getRandomInt(0 ,window.innerWidth);
         let yIndex = getRandomInt(0 ,window.innerHeight);
         
