@@ -238,6 +238,8 @@ function finalCheckpoint() {
     document.getElementById("namePrj").textContent = name;
     document.getElementById("speedPrg").textContent = speed;
     document.getElementById("anglePrg").textContent = angle;
+
+    document.getElementsByClassName('finalCheckpointWraper').classList.add('ShowFinalCheckpoint');
 }
 document.getElementById("ActiveTunnelButton").addEventListener('click', finalCheckpoint);
 
