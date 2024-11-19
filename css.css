@@ -161,21 +161,81 @@ body {
 
 
 /*Controller page*/
-.finalCheckpointWraper{ 
+.finalCheckpointWraper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #adadad;
     z-index: 5;
     opacity: 0;
-    transition: all .5 ease-in-out;
     pointer-events: none;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-out; /* Smoother transition for visibility */
 }
+
 .ShowFinalCheckpoint {
     opacity: 1;
     pointer-events: all;
+    transform: translate(-50%, -50%) scale(1.05); /* Slight scaling effect for emphasis */
 }
+#namePrj {
+    font-weight: bold; /* Make the name bold to emphasize it */
+    color: #2ca9bc; /* Use a complementary color for the project name */
+    font-size: 20px; /* Slightly larger size for the project name */
+}
+
+/* Styling for the speedPrg paragraph */
+#speedPrg {
+    font-style: italic; /* Italicize the speed for distinction */
+    color: #1e7a7a; /* Darker color to show it’s a different type of info */
+}
+
+/* Styling for the anglePrg paragraph */
+#anglePrg {
+    font-size: 18px; /* Same size as the default paragraphs */
+    color: #8a4f7d; /* A different color to distinguish the angle information */
+    font-weight: 600; /* Semi-bold to make the angle stand out */
+}
+/* Styling for the experiment name input */
+#experName {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #2ca9bc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 350px; /* Limit width */
+    box-sizing: border-box;
+    margin-bottom: 15px; /* Space below input */
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect for the experiment name input */
+#experName:focus {
+    border-color: #1e7a7a; /* Darker border color on focus */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Styling for the additional info textarea */
+#AdditionalInfoExpr {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #2ca9bc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 350px; /* Limit width */
+    height: 150px; /* Fixed height */
+    resize: vertical; /* Allow vertical resizing */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Space below textarea */
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect for the additional info textarea */
+#AdditionalInfoExpr:focus {
+    border-color: #1e7a7a; /* Darker border color on focus */
+    outline: none; /* Remove default focus outline */
+}
+
+
 .windStatsView {
     display: flex;
     align-items: center;
