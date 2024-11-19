@@ -232,7 +232,7 @@ function ToggleSwitches() {
 function finalCheckpoint() {
     let name = document.getElementById("experName").value;
     if (name == ""){return;}
-    let speed = WindControllerSlider.value;
+    let speed = document.getElementById("windController").value;
     let angle = AngleControllerSlider.value;
 
     document.getElementById("namePrj").textContent = name;
