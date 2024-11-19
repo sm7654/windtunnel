@@ -233,7 +233,7 @@ function finalCheckpoint() {
     let name = document.getElementById("experName").value;
     if (name == ""){return;}
     let speed = document.getElementById("windController").value;
-    let angle = AngleControllerSlider.value;
+    let angle = document.getElementById("AngleController").value;
 
     document.getElementById("namePrj").textContent = name;
     document.getElementById("speedPrg").textContent = speed;
