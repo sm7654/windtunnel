@@ -160,9 +160,10 @@ function updateWindFlow(UpdaatedWindFlow) {
     clearInterval(loop);
     activeWindFlow(windFlowSpeed);
 }
-document.getElementById("windController").addEventListener('input', function(e) {
-    document.getElementById("windController_VALUE").textContent = document.getElementById("windController").value;
-    updateWindFlow(document.getElementById("windController").value);
+let WindControllerSlider = document.getElementById("windController");
+WindControllerSlider.addEventListener('input', function(e) {
+    document.getElementById("windController_VALUE").textContent = WindControllerSlider.value;
+    updateWindFlow(WindControllerSlider.value);
 
 });
 document.getElementById("Pause").addEventListener('click', function(event) {
@@ -173,9 +174,9 @@ document.getElementById("Pause").addEventListener('click', function(event) {
         wind.style.animationPlayState = 'paused';
     })
 });
-
-document.getElementById("AngleController").addEventListener('input', (event) => {
-    let angle = document.getElementById("AngleController").value;
+let AngleControllerSlider = document.getElementById("AngleController");
+AngleControllerSlider.addEventListener('input', (event) => {
+    let angle = AngleControllerSlider.value;
     document.getElementById("angleController_VALUE").textContent = angle;
     document.getElementsByClassName("box")[0].style.transform = `rotate(${angle*-1}deg)`
 });
@@ -227,7 +228,18 @@ function ToggleSwitches() {
     document.getElementsByClassName("onOffSwitches")[0].classList.toggle("ActiveSwitchStatus");
     document.getElementsByClassName("onOffSwitches")[1].classList.toggle("ActiveSwitchStatus");
 }
-document.getElementById("ActiveTunnelButton").addEventListener('click', ToggleSwitches);
+
+function finalCheckpoint() {
+    let name = document.getElementById("experName").value;
+    if (name == ""){return;}
+    let speed = WindControllerSlider.value;
+    let angle = AngleControllerSlider.value;
+
+    document.getElementById("namePrj").textContent = name;
+    document.getElementById("speedPrg").textContent = speed;
+    document.getElementById("anglePrg").textContent = angle;
+}
+document.getElementById("ActiveTunnelButton").addEventListener('click', finalCheckpoint);
 
 
 
