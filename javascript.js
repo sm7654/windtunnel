@@ -160,7 +160,7 @@ function updateWindFlow(UpdaatedWindFlow) {
     clearInterval(loop);
     activeWindFlow(windFlowSpeed);
 }
-let WindControllerSlider = document.getElementById("windController");
+const WindControllerSlider = document.getElementById("windController");
 WindControllerSlider.addEventListener('input', function(e) {
     document.getElementById("windController_VALUE").textContent = WindControllerSlider.value;
     updateWindFlow(WindControllerSlider.value);
